@@ -4,7 +4,7 @@ var imgInput = document.querySelector('#new-post-img');
 
 function imgPreview(event) {
   var imgPlaceHolder = document.querySelector('img');
-  imgPlaceHolder.setAttribute('src', event);
+  imgPlaceHolder.setAttribute('src');
 }
 
 imgInput.addEventListener('input', imgPreview);
