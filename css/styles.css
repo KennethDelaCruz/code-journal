@@ -1,0 +1,31 @@
+#new-post {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+}
+
+form {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+form > input {
+  width: 90%;
+}
+
+#new-post-title,
+#new-post-img {
+  max-width: 400px;
+}
+
+#new-post-notes {
+  height: 180px;
+}
+
+img {
+  max-width: 300px;
+  max-height: 300px;
+}

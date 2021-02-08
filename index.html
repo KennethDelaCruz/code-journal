@@ -18,6 +18,20 @@
   <header>
   </header>
   <main>
+    <div id="new-post" data-view="entry-form">
+      <form>
+        <img src="images/placeholder-image-square.jpg">
+        <div>
+          <label for="new-post-title">Title</label><br />
+          <input type="text" id="new-post-title" name="new-post-title" required><br />
+          <label for="new-img-url">Image URL:</label><br />
+          <input type="text" id="new-post-img" name="new-post-img" required><br />
+        </div><br />
+        <label for="new-post-notes">Notes:</label><br />
+        <input type="text" id="new-post-notes" name="new-post-notes" required><br />
+        <button type="submit" name="submit-button">SUBMIT</button>
+      </form>
+    </div>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
