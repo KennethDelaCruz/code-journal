@@ -22,7 +22,6 @@ function submitForm(event) {
     notes: formRoute.notes.value,
     entryID: data.nextEntryId
   };
-
   data.nextEntryId++;
   data.entries.unshift(postInfo);
   imgPlaceHolder.setAttribute('src', 'images/placeholder-image-square.jpg');
@@ -31,3 +30,10 @@ function submitForm(event) {
 
 imgInput.addEventListener('input', imgPreview);
 formRoute.addEventListener('submit', submitForm);
+
+function saveLocal(event) {
+  var dataJSON = JSON.stringify(data);
+  localStorage.setItem('data model', dataJSON);
+}
+
+window.addEventListener('beforeunload', saveLocal);

@@ -7,9 +7,33 @@ img {
 #new-post-img {
   width: 100%;
   margin: 5px;
+  height: 25px;
 }
 
 #new-post-notes {
   width: 100%;
   margin: 5px;
+}
+
+label {
+  font-size: 20px;
+}
+
+header {
+  background-color: #22762a;
+}
+
+header > h2 {
+  color: white;
+  height: 40;
+}
+
+#submit-button {
+  background-color: #22762a;
+  color: white;
+  height: 30px;
+  width: 100px;
+  border-radius: 5px;
+  box-shadow: 3px 3px black;
+  font-size: 17px;
 }
