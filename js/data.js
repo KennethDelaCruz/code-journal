@@ -7,7 +7,14 @@ var data = {
   nextEntryId: 1
 };
 
-var previousData = localStorage.getItem('data model');
+var previousData = localStorage.getItem('data-model');
 if (previousData !== null) {
   data = JSON.parse(previousData);
 }
+
+function saveLocal(event) {
+  var dataJSON = JSON.stringify(data);
+  localStorage.setItem('data-model', dataJSON);
+}
+
+window.addEventListener('beforeunload', saveLocal);

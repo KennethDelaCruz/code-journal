@@ -30,10 +30,3 @@ function submitForm(event) {
 
 imgInput.addEventListener('input', imgPreview);
 formRoute.addEventListener('submit', submitForm);
-
-function saveLocal(event) {
-  var dataJSON = JSON.stringify(data);
-  localStorage.setItem('data model', dataJSON);
-}
-
-window.addEventListener('beforeunload', saveLocal);
