@@ -1,11 +1,10 @@
 /* global data */
 /* exported data */
-var imgInput = document.querySelector('#new-post-img');
+var imgInput = document.querySelector('#input-image');
 var formRoute = document.querySelector('form');
-var imgPlaceHolder = document.querySelector('img');
+var imgPlaceHolder = document.querySelector('#input-image-preview');
 
 function imgPreview(event) {
-  var imgPlaceHolder = document.querySelector('img');
   var newImage = event.target.value;
 
   imgPlaceHolder.setAttribute('src', newImage);
