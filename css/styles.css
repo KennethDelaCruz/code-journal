@@ -29,6 +29,7 @@ img {
 label {
   font-size: 20px;
   margin: 5px 0 5px 0;
+  font-weight: bold;
 }
 
 header {
@@ -63,8 +64,17 @@ ul {
   padding: 0;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .post-title {
   margin-top: 0;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button:active {
+  transform: translateY(0.1rem);
 }
