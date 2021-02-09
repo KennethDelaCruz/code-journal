@@ -1,6 +1,6 @@
 /* global data */
 /* exported data */
-var imgInput = document.querySelector('#new-post-img');
+var imgInput = document.querySelector('#input-image');
 var formRoute = document.querySelector('form');
 var imgPlaceHolder = document.querySelector('img');
 
