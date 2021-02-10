@@ -16,13 +16,16 @@
 </head>
 <body>
   <header>
-    <div class="column-full ">
-      <h2 class="container header-nav">Code Journal</h2>
+    <div class="container header-nav">
+      <div class="column-full">
+        <h2 class="header-title">Code Journal</h2>
+          <a class="anchors" href="#entries">entries</a>
+      </div>
     </div>
   </header>
   <main>
-    <div class="container" data-view="entries">
-      <ul>
+    <div class="container" id="entries" data-view="entries">
+      <ul class="post-entries">
         <li>
           <div class="row">
             <div class="column-half">
@@ -44,18 +47,14 @@
             </div>
           </div>
         </li>
-        <li> </li>
-        <li> </li>
-        <li> </li>
-        <li> </li>
       </ul>
     </div>
-    <div class="container" data-view="entry-form">
+    <div id="form-container" class="container" data-view="entry-form">
       <form>
         <h2>New Entry</h2>
         <div class="row">
           <div class="column-half">
-           <img src="images/placeholder-image-square.jpg">
+           <img id="image-placeholder" src="images/placeholder-image-square.jpg">
           </div>
           <div class="column-half">
             <label for="input-title">Title:</label><br />

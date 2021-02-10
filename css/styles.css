@@ -4,7 +4,6 @@ body {
 
 img {
   max-width: 100%;
-  max-height: 100%;
 }
 
 #input-title,
@@ -38,11 +37,6 @@ header {
   align-items: center;
 }
 
-.header-nav {
-  color: white;
-  height: 40;
-}
-
 #submit-button {
   background-color: #22762a;
   color: white;
@@ -63,8 +57,25 @@ ul {
   padding: 0;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .post-title {
   margin-top: 0;
+}
+
+.header-title {
+  display: inline;
+}
+
+.header-nav {
+  width: 100%;
+  color: white;
+  height: 40;
+}
+
+.anchors {
+  color: white;
+  font-size: 18px;
+  display: inline-block;
 }
