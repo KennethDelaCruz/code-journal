@@ -37,7 +37,8 @@ header {
   align-items: center;
 }
 
-#submit-button {
+#submit-button,
+#new-post-button {
   background-color: #22762a;
   color: white;
   height: 30px;

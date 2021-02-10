@@ -3,7 +3,11 @@
 var imgInput = document.querySelector('#input-image');
 var formRoute = document.querySelector('form');
 var imgPlaceHolder = document.querySelector('#image-placeholder');
-var entriesNav = document.querySelector('#nav-entries');
+var entriesNav = document.querySelector('#nav-button-entries');
+var postButton = document.querySelector('#new-post-button');
+var allContainerDiv = document.querySelectorAll('.container');
+var formDiv = document.querySelector('#form-container');
+var entriesDiv = document.querySelector('#entries');
 
 function imgPreview(event) {
   var newImage = event.target.value;
@@ -15,7 +19,6 @@ function imgPreview(event) {
 }
 
 function submitForm(event) {
-  event.preventDefault();
   var postInfo = {
     title: formRoute.title.value,
     imageURL: formRoute.img.value,
@@ -25,6 +28,8 @@ function submitForm(event) {
   data.nextEntryId++;
   data.entries.push(postInfo);
   imgPlaceHolder.setAttribute('src', 'images/placeholder-image-square.jpg');
+  data.view = 'entries';
+
   formRoute.reset();
 }
 
@@ -65,23 +70,35 @@ function generatePost(object) {
 function postLoop(event) {
   var listRoute = document.querySelector('ul');
   var objectEntries = data.entries;
-  var examplePost = document.querySelector('#example-post');
   for (var i = 0; i < objectEntries.length; i++) {
     var newPost = generatePost(objectEntries[i]);
     listRoute.prepend(newPost);
   }
+}
 
-  if (objectEntries !== 0) {
-    examplePost.classList.add('hidden');
+function hideDIV(object) {
+  var viewType = object.getAttribute('data-view');
+
+  if (viewType !== data.view) {
+    object.setAttribute('class', 'container hidden');
   }
 
 }
 
 function navClick(event) {
   data.view = 'entries';
+  allContainerDiv.forEach(hideDIV);
+  entriesDiv.setAttribute('class', 'container');
 
 }
 
-entriesNav.addEventListener('click', navClick);
+function newPostClick(event) {
+  data.view = 'entry-form';
+  allContainerDiv.forEach(hideDIV);
+  formDiv.setAttribute('class', 'container');
 
+}
+
+postButton.addEventListener('click', newPostClick);
+entriesNav.addEventListener('click', navClick);
 document.addEventListener('DOMContentLoaded', postLoop);
