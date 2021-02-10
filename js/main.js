@@ -3,6 +3,7 @@
 var imgInput = document.querySelector('#input-image');
 var formRoute = document.querySelector('form');
 var imgPlaceHolder = document.querySelector('#image-placeholder');
+var entriesNav = document.querySelector('#nav-entries');
 
 function imgPreview(event) {
   var newImage = event.target.value;
@@ -64,11 +65,23 @@ function generatePost(object) {
 function postLoop(event) {
   var listRoute = document.querySelector('ul');
   var objectEntries = data.entries;
+  var examplePost = document.querySelector('#example-post');
   for (var i = 0; i < objectEntries.length; i++) {
     var newPost = generatePost(objectEntries[i]);
     listRoute.prepend(newPost);
   }
 
+  if (objectEntries !== 0) {
+    examplePost.classList.add('hidden');
+  }
+
 }
+
+function navClick(event) {
+  data.view = 'entries';
+
+}
+
+entriesNav.addEventListener('click', navClick);
 
 document.addEventListener('DOMContentLoaded', postLoop);
