@@ -79,3 +79,15 @@ ul {
   font-size: 18px;
   display: inline-block;
 }
+
+.nav-bar {
+  list-style-type: none;
+  padding: 0;
+  display: inline;
+}
+
+.nav-bar > li {
+  display: inline;
+  margin-right: 5px;
+  margin-left: 5px;
+}
