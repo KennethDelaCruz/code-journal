@@ -8,12 +8,7 @@ var postButton = document.querySelector('#new-post-button');
 var allContainerDiv = document.querySelectorAll('.container');
 var formDiv = document.querySelector('#form-container');
 var entriesDiv = document.querySelector('#entries');
-var examplePost = document.querySelector('#example-post');
 var postList = document.querySelector('#post-list');
-
-if (data.entries.length >= 1) {
-  examplePost.setAttribute('class', 'hidden');
-}
 
 allContainerDiv.forEach(hideDIV);
 
