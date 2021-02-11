@@ -8,6 +8,12 @@ var postButton = document.querySelector('#new-post-button');
 var allContainerDiv = document.querySelectorAll('.container');
 var formDiv = document.querySelector('#form-container');
 var entriesDiv = document.querySelector('#entries');
+var examplePost = document.querySelector('#example-post');
+
+allContainerDiv.forEach(hideDIV);
+if (data.entries !== 0) {
+  examplePost.setAttribute('class', 'hidden');
+}
 
 function imgPreview(event) {
   var newImage = event.target.value;
@@ -26,10 +32,9 @@ function submitForm(event) {
     entryID: data.nextEntryId
   };
   data.nextEntryId++;
-  data.entries.push(postInfo);
+  data.entries.unshift(postInfo);
   imgPlaceHolder.setAttribute('src', 'images/placeholder-image-square.jpg');
   data.view = 'entries';
-
   formRoute.reset();
 }
 
@@ -68,17 +73,16 @@ function generatePost(object) {
 }
 
 function postLoop(event) {
-  var listRoute = document.querySelector('ul');
+  var listRoute = document.querySelector('.post-entries');
   var objectEntries = data.entries;
   for (var i = 0; i < objectEntries.length; i++) {
     var newPost = generatePost(objectEntries[i]);
-    listRoute.prepend(newPost);
+    listRoute.append(newPost);
   }
 }
 
 function hideDIV(object) {
   var viewType = object.getAttribute('data-view');
-
   if (viewType !== data.view) {
     object.setAttribute('class', 'container hidden');
   }

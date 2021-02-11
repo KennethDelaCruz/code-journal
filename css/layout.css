@@ -35,10 +35,6 @@
   }
 }
 
-#entries-title {
-  display: inline;
-}
-
 .entry-view-header {
   display: flex;
   justify-content: space-between;
