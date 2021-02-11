@@ -10,10 +10,11 @@ var formDiv = document.querySelector('#form-container');
 var entriesDiv = document.querySelector('#entries');
 var examplePost = document.querySelector('#example-post');
 
-allContainerDiv.forEach(hideDIV);
-if (data.entries !== 0) {
+if (data.entries.length >= 1) {
   examplePost.setAttribute('class', 'hidden');
 }
+
+allContainerDiv.forEach(hideDIV);
 
 function imgPreview(event) {
   var newImage = event.target.value;
