@@ -9,6 +9,7 @@ var allContainerDiv = document.querySelectorAll('.container');
 var formDiv = document.querySelector('#form-container');
 var entriesDiv = document.querySelector('#entries');
 var examplePost = document.querySelector('#example-post');
+var postList = document.querySelector('#post-list');
 
 if (data.entries.length >= 1) {
   examplePost.setAttribute('class', 'hidden');
@@ -26,6 +27,7 @@ function imgPreview(event) {
 }
 
 function submitForm(event) {
+
   var postInfo = {
     title: formRoute.title.value,
     imageURL: formRoute.img.value,
@@ -36,6 +38,10 @@ function submitForm(event) {
   data.entries.unshift(postInfo);
   imgPlaceHolder.setAttribute('src', 'images/placeholder-image-square.jpg');
   data.view = 'entries';
+  formDiv.setAttribute('class', 'container hidden');
+  entriesDiv.setAttribute('class', 'container');
+  postList.prepend(generatePost(postInfo));
+
   formRoute.reset();
 }
 
