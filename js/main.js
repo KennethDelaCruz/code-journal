@@ -8,7 +8,7 @@ var postButton = document.querySelector('#new-post-button');
 var allContainerDiv = document.querySelectorAll('.container');
 var formDiv = document.querySelector('#form-container');
 var entriesDiv = document.querySelector('#entries');
-var postList = document.querySelector('#post-list');
+var postList = document.querySelector('.post-entries');
 
 allContainerDiv.forEach(hideDIV);
 
@@ -111,6 +111,16 @@ function newPostClick(event) {
 
 }
 
+function test1(event) {
+  var eventTarget = event.target.getAttribute('class');
+
+  if (eventTarget === 'edit-icon') {
+    var closestListItem = event.target.closest('li');
+    return closestListItem;
+  }
+}
+
+postList.addEventListener('click', test1);
 postButton.addEventListener('click', newPostClick);
 entriesNav.addEventListener('click', navClick);
 document.addEventListener('DOMContentLoaded', postLoop);
