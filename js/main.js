@@ -45,6 +45,7 @@ formRoute.addEventListener('submit', submitForm);
 
 function generatePost(object) {
   var newListItem = document.createElement('li');
+  newListItem.setAttribute('data-entry-id', object.entryID);
 
   var divRow = document.createElement('div');
   divRow.setAttribute('class', 'row');
