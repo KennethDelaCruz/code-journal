@@ -65,6 +65,11 @@ function generatePost(object) {
   var pElement = document.createElement('p');
   pElement.textContent = object.notes;
 
+  var iconImg = document.createElement('img');
+  iconImg.setAttribute('class', 'edit-icon');
+  iconImg.setAttribute('src', 'https://www.flaticon.com/svg/vstatic/svg/61/61456.svg?token=exp=1613092287~hmac=c9a203da4dd119e749e82f0da3b95adb');
+
+  divColumnHalf2.appendChild(iconImg);
   divColumnHalf2.appendChild(h2Element);
   divColumnHalf2.appendChild(pElement);
   divColumnHalf1.appendChild(imgElement);

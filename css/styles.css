@@ -89,3 +89,8 @@ ul {
   margin-right: 5px;
   margin-left: 5px;
 }
+
+.edit-icon {
+  width: 5%;
+  float: right;
+}
