@@ -70,10 +70,9 @@ function generatePost(object) {
   iconImg.setAttribute('class', 'edit-icon');
   iconImg.setAttribute('src', 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Edit_icon_%28the_Noun_Project_30184%29.svg/1024px-Edit_icon_%28the_Noun_Project_30184%29.svg.png');
 
-
+  divColumnHalf2.appendChild(iconImg);
   divColumnHalf2.appendChild(h2Element);
   divColumnHalf2.appendChild(pElement);
-  divColumnHalf2.appendChild(iconImg);
   divColumnHalf1.appendChild(imgElement);
   divRow.appendChild(divColumnHalf1);
   divRow.appendChild(divColumnHalf2);
@@ -118,10 +117,9 @@ function test1(event) {
   console.log(eventTarget);
   if (eventTarget === 'edit-icon') {
     var closestListItem = event.target.closest('li');
-    var closestTitle = event.target.closest('img');
+    var closestTitle = event.target.closest('h2');
     var closestH2 = event.target.closest('h2');
-    var closestP = eventTarget.getElementsByTagName('p');
-    console.log(closestTitle,closestListItem, closestH2, closestP);
+    console.log(closestTitle,closestListItem, closestH2);
   }
 }
 
