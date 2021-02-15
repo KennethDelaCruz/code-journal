@@ -68,11 +68,12 @@ function generatePost(object) {
 
   var iconImg = document.createElement('img');
   iconImg.setAttribute('class', 'edit-icon');
-  iconImg.setAttribute('src', 'https://www.flaticon.com/svg/vstatic/svg/61/61456.svg?token=exp=1613092287~hmac=c9a203da4dd119e749e82f0da3b95adb');
+  iconImg.setAttribute('src', 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Edit_icon_%28the_Noun_Project_30184%29.svg/1024px-Edit_icon_%28the_Noun_Project_30184%29.svg.png');
 
-  divColumnHalf2.appendChild(iconImg);
+
   divColumnHalf2.appendChild(h2Element);
   divColumnHalf2.appendChild(pElement);
+  divColumnHalf2.appendChild(iconImg);
   divColumnHalf1.appendChild(imgElement);
   divRow.appendChild(divColumnHalf1);
   divRow.appendChild(divColumnHalf2);
@@ -112,13 +113,19 @@ function newPostClick(event) {
 }
 
 function test1(event) {
-  var eventTarget = event.target.getAttribute('class');
+  var eventTarget = event.target.className;
 
+  console.log(eventTarget);
   if (eventTarget === 'edit-icon') {
     var closestListItem = event.target.closest('li');
-    return closestListItem;
+    var closestTitle = event.target.closest('img');
+    var closestH2 = event.target.closest('h2');
+    var closestP = eventTarget.getElementsByTagName('p');
+    console.log(closestTitle,closestListItem, closestH2, closestP);
   }
 }
+
+// this code above is incomplete. this should be finished to complete the third feature
 
 postList.addEventListener('click', test1);
 postButton.addEventListener('click', newPostClick);
